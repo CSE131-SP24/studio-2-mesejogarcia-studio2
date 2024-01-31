@@ -16,10 +16,14 @@ public class Ruin {
 	int day = 0;
 	int attempts = 0;
 	int number;
-	double startAmount = originalStart;
-	for (int totalSimulations = 1; totalSimulations<=100; totalSimulations++);
+	int totalSimulations = 1;
+	//for (int totalSimulations = 1; totalSimulations<=100; totalSimulations++);
+	while (totalSimulations<=100)
 	{
+		double startAmount=originalStart;
+		attempts = 0;
 		day++;
+		originalStart=startAmount;
 	while ((startAmount<winLimit)&&(startAmount>0))
 	{
 		attempts++;
@@ -42,7 +46,8 @@ public class Ruin {
 	{
 		System.out.println("Simulation "+day+": "+attempts+" Big L Bozo");
 	}
-	startAmount = originalStart;
+	
+	totalSimulations++;
 	}
 }
 	}
