@@ -17,6 +17,7 @@ public class Ruin {
 	int attempts = 0;
 	int number;
 	int totalSimulations = 1;
+	int losses = 0;
 	//for (int totalSimulations = 1; totalSimulations<=100; totalSimulations++);
 	while (totalSimulations<=100)
 	{
@@ -44,11 +45,15 @@ public class Ruin {
 	}
 	else
 	{
+		losses++;
 		System.out.println("Simulation "+day+": "+attempts+" Big L Bozo");
 	}
 	
 	totalSimulations++;
 	}
+	System.out.println("You lost "+losses+" many times! Don't give up!");
+	double expectedRuinRate = 1-(originalStart/winLimit);
+	System.out.print("Expected ruin rate: "+expectedRuinRate+". Don't stop now!");
 }
 	}
 
